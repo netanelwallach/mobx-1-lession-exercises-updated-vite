@@ -7,8 +7,12 @@ import { Item } from "./stores/Item";
 import { ShoppingList } from "./stores/ShoppingList";
 
 let potatoes = new Item("Potatoes");
+let corn = new Item("Corn");
+let sombreros = new Item("Sombreros");
 let groceryList = new ShoppingList();
 groceryList.list.push(potatoes);
+groceryList.list.push(corn);
+groceryList.list.push(sombreros);
 
 // Use the prop "store" for your store
 ReactDOM.render(<App store={groceryList} />, document.getElementById("root"));
