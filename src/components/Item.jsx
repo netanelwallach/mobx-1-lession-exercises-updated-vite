@@ -8,6 +8,11 @@ class Item extends Component {
   };
   editItem = () => {
     //your code here
+    let item = this.props.item;
+    let newLocation = prompt("Please enter your location", item.location);
+    if (newLocation != null && newLocation != "") {
+      this.props.store.editItem(item.name, newLocation);
+    }
   };
   deleteItem = () => {
     //your code here
@@ -25,6 +30,9 @@ class Item extends Component {
         <span>
           {item.name} - {item.location}
         </span>
+        <button className="editButton" onClick={this.editItem}>
+          Edit item
+        </button>
       </div>
     );
   }
