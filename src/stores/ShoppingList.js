@@ -11,6 +11,7 @@ export class ShoppingList {
       list: observable,
       length: observable,
       checkItem: action,
+      addItem: action,
     });
   }
   checkItem = (name) => {
@@ -18,8 +19,10 @@ export class ShoppingList {
     let item = this.list.find((i) => i.name === name);
     item.completed = !item.completed;
   };
-  addItem = () => {
+  addItem = (newItem) => {
     // your code here
+    let item = new Item(newItem);
+    this.list.push(item);
   };
   editItem = () => {
     // your code here
