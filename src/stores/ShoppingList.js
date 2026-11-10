@@ -13,6 +13,7 @@ export class ShoppingList {
       checkItem: action,
       addItem: action,
       editItem: action,
+      deleteItem: action,
     });
   }
   checkItem = (name) => {
@@ -32,7 +33,11 @@ export class ShoppingList {
       item.location = location;
     }
   };
-  deleteItem = () => {
+  deleteItem = (name) => {
     // your code here
+    let index = this.list.findIndex((i) => i.name === name);
+    if (index !== -1) {
+      this.list.splice(index, 1);
+    }
   };
 }
