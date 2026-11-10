@@ -26,7 +26,7 @@ class App extends Component {
         {/* your code here
           You should map each grocery item into an Item component
       */}
-        {this.props.store.list.map((index, item) => (
+        {this.props.store.list.map((item, index) => (
           <Item key={index} item={item} store={this.props.store} />
         ))}
       </div>
